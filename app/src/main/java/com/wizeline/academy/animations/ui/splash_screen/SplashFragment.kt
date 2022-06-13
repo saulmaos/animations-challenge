@@ -1,15 +1,18 @@
 package com.wizeline.academy.animations.ui.splash_screen
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.DecelerateInterpolator
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.wizeline.academy.animations.databinding.SplashFragmentBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
 
 class SplashFragment : Fragment() {
 
@@ -31,6 +34,19 @@ class SplashFragment : Fragment() {
             delay(2000)
             goToHomeScreen()
         }
+        ValueAnimator.ofFloat(
+            0f,
+            1f
+        ).apply {
+            duration = 1500
+            interpolator = DecelerateInterpolator()
+            addUpdateListener {
+                val scale = it.animatedValue as Float
+                binding.ivWizelineLogo.scaleX = scale
+                binding.ivWizelineLogo.scaleY = scale
+                binding.ivWizelineLogo.alpha = scale
+            }
+        }.start()
     }
 
     private fun goToHomeScreen() {

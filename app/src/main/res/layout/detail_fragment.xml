@@ -10,6 +10,7 @@
         android:layout_width="@dimen/detail_image_size"
         android:layout_height="@dimen/detail_image_size"
         android:layout_margin="@dimen/detail_image_margin"
+        android:transitionName="image_detail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/sample_img" />
@@ -21,6 +22,7 @@
         android:layout_marginStart="@dimen/detail_title_margin"
         android:layout_marginTop="@dimen/detail_title_margin"
         android:layout_marginEnd="@dimen/detail_title_margin"
+        android:transitionName="tv_title"
         android:maxLines="1"
         android:textSize="@dimen/detail_title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/detail_subtitle_margin_top"
         android:layout_marginEnd="@dimen/detail_subtitle_margin_end"
+        android:transitionName="tv_subtitle"
         android:ellipsize="end"
         android:maxLines="2"
         app:layout_constraintEnd_toEndOf="parent"
